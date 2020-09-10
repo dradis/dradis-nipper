@@ -1,5 +1,11 @@
+require_relative 'gem_version'
+
 module Dradis
-  module Nipper
-    VERSION = '0.1.0'
+  module Plugins
+    module Nipper
+      def self.version
+        gem_version
+      end
+    end
   end
 end

@@ -1,31 +1,25 @@
 $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "dradis/nipper/version"
+require 'dradis/nipper/version'
+version = Dradis::Plugins::Nipper::VERSION::STRING
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "dradis-nipper"
-  spec.version     = Dradis::Nipper::VERSION
-  spec.authors     = [""]
-  spec.email       = [""]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Dradis::Nipper."
-  spec.description = "TODO: Description of Dradis::Nipper."
-  spec.license     = "MIT"
+  spec.platform    = Gem::Platform::RUBY
+  spec.name        = 'dradis-saint'
+  spec.version     = version
+  spec.authors     = ['Daniel Martin']
+  spec.email       = ['etd@nomejortu.com']
+  spec.homepage    = 'http://dradisframework.org'
+  spec.summary     = 'Saint upload add-on for Dradis Framework.'
+  spec.description = 'This add-on allows you to upload and parse reports from Nipper.'
+  spec.license     = 'GPL-2'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.files = `git ls-files`.split($\)
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.add_dependency 'dradis-plugins', '~> 3.8'
+  spec.add_dependency 'rake', '~> 13.0'
 
-  spec.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.2"
-
-  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency 'bundler', '~> 1.6'
 end
