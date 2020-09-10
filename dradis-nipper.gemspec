@@ -7,12 +7,12 @@ version = Dradis::Plugins::Nipper::VERSION::STRING
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
-  spec.name        = 'dradis-saint'
+  spec.name        = 'dradis-nipper'
   spec.version     = version
   spec.authors     = ['Daniel Martin']
   spec.email       = ['etd@nomejortu.com']
   spec.homepage    = 'http://dradisframework.org'
-  spec.summary     = 'Saint upload add-on for Dradis Framework.'
+  spec.summary     = 'Nipper upload add-on for Dradis Framework.'
   spec.description = 'This add-on allows you to upload and parse reports from Nipper.'
   spec.license     = 'GPL-2'
 
