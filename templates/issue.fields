@@ -1,0 +1,8 @@
+issue.title
+issue.cvss_base
+issue.cvss_temporal
+issue.cvss_enviornmental
+issue.finding
+issue.impact
+issue.ease
+issue.recommendation

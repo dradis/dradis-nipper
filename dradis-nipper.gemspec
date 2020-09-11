@@ -1,7 +1,7 @@
-$:.push File.expand_path("lib", __dir__)
+$:.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
-require 'dradis/nipper/version'
+require 'dradis/plugins/nipper/version'
 version = Dradis::Plugins::Nipper::VERSION::STRING
 
 # Describe your gem and declare its dependencies:

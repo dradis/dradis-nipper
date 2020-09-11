@@ -1,0 +1,7 @@
+<section>
+  <issuedetails>
+    <devices>
+      <device name="SampleDevice" type="Sample Device Type" osversion="1.2.3" />
+    </devices>
+  </issuedetails>
+</section>

@@ -1,0 +1,23 @@
+#[Title]#
+%issue.title%
+
+#[CVSS Base]#
+%issue.cvss_base%
+
+#[CVSS Temporal]#
+%issue.cvss_temporal%
+
+#[CVSS Environmental]#
+%issue.cvss_enviornmental%
+
+#[Finding]#
+%issue.finding%
+
+#[Impact]#
+%issue.impact%
+
+#[Ease]#
+%issue.ease%
+
+#[Recommendation]#
+%issue.recommendation%

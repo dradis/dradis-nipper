@@ -1,0 +1,8 @@
+#[Device Name]#
+%evidence.device_name%
+
+#[Device Type]#
+%evidence.device_type%
+
+#[OS Version]#
+%evidence.device_osversion%
