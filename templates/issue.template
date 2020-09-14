@@ -8,7 +8,7 @@
 %issue.cvss_temporal%
 
 #[CVSS Environmental]#
-%issue.cvss_enviornmental%
+%issue.cvss_environmental%
 
 #[Finding]#
 %issue.finding%

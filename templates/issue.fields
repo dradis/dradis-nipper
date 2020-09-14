@@ -1,7 +1,10 @@
 issue.title
 issue.cvss_base
+issue.cvss_base_vector
 issue.cvss_temporal
-issue.cvss_enviornmental
+issue.cvss_temporal_vector
+issue.cvss_environmental
+issue.cvss_environmental_vector
 issue.finding
 issue.impact
 issue.ease
