@@ -8,7 +8,7 @@ module Dradis::Plugins::Nipper
       SECURITY.CLASSIFICATIONS
     }
 
-    def import(params={})
+    def import(params = {})
       file_content = File.read(params[:file])
 
       logger.info { 'Parsing Nipper output file...' }
@@ -40,7 +40,6 @@ module Dradis::Plugins::Nipper
       end
 
       true
-
     end
 
     private

@@ -6,14 +6,15 @@ module Nipper
 
     def supported_tags
       [
-        :title,
-        :cvss_base, :cvss_temporal, :cvss_environmental,
-        :cvss_base_vector, :cvss_temporal_vector, :cvss_environmental_vector,
-        :finding, :impact, :ease, :recommendation
+        :cvss_base, :cvss_base_vector,
+        :cvss_environmental, :cvss_environmental_vector,
+        :cvss_temporal, :cvss_temporal_vector,
+        :ease, :finding, :impact, :recommendation,
+        :title
       ]
     end
 
-    def respond_to?(method, include_private=false)
+    def respond_to?(method, include_private = false)
       return true if supported_tags.include?(method.to_sym)
       super
     end
@@ -24,7 +25,7 @@ module Nipper
         return
       end
 
-      return process_field_value(method)
+      process_field_value(method)
     end
 
     def process_field_value(method)
@@ -40,7 +41,7 @@ module Nipper
       elsif method.to_s.starts_with?('cvss')
         process_cvss_field(method)
       else
-        @xml.xpath("./#{translations_table[method].to_s}").first.try(:text)
+        @xml.xpath("./#{translations_table[method]}").first.try(:text)
       end
     end
 
@@ -54,9 +55,9 @@ module Nipper
       base_method = method.to_s.sub('_vector', '').to_sym
 
       if method.to_s.ends_with?('vector')
-        @xml.xpath("./#{translations_table[base_method].to_s}").first.try(:text)
+        @xml.xpath("./#{translations_table[base_method]}").first.try(:text)
       else
-        @xml.xpath("./#{translations_table[base_method].to_s}").attr('score')
+        @xml.xpath("./#{translations_table[base_method]}").attr('score')
       end
     end
   end

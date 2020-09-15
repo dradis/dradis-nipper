@@ -1,11 +1,10 @@
 module Dradis
   module Plugins
     module Nipper
-
       class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
-        ALLOWED_DATA_NAMES = %w{section devices}
+        ALLOWED_DATA_NAMES = %w{devices section}
 
-        def post_initialize(args={})
+        def post_initialize(args = {})
           raise 'Unhandled data name!' unless ALLOWED_DATA_NAMES.include?(data.name)
 
           @nipper_object =
@@ -16,7 +15,7 @@ module Dradis
             end
         end
 
-        def value(args={})
+        def value(args = {})
           field = args[:field]
           _, name = field.split('.')
 
