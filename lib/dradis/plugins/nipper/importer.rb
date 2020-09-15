@@ -53,9 +53,7 @@ module Dradis::Plugins::Nipper
     end
 
     def process_issue(xml_issue)
-      finding_id = xml_issue.at_xpath('./issuedetails/ratings/FindingID')
-
-      plugin_id = finding_id ? finding_id.text : xml_issue.attr('ref')
+      plugin_id = xml_issue.attr('ref')
 
       logger.info { "Creating issue: #{plugin_id}" }
 
