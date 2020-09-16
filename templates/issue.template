@@ -1,13 +1,13 @@
 #[Title]#
 %issue.title%
 
-#[CVSS Base]#
+#[CVSSv2.Base]#
 %issue.cvss_base%
 
-#[CVSS Temporal]#
+#[CVSSv2.Temporal]#
 %issue.cvss_temporal%
 
-#[CVSS Environmental]#
+#[CVSSv2.Environmental]#
 %issue.cvss_environmental%
 
 #[Finding]#
