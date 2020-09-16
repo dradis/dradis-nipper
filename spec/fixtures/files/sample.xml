@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document nipperstudio="2.8.0" xmlversion="2" xmlrevision="3">
+  <information>
+    <title>Firewall Review Report</title>
+    <author>Compass IT Compliance</author>
+    <authorlogo>C:/Nipper Photos/CompassITC-logo-HiRes-TSP.png</authorlogo>
+    <date>Friday, September 11, 2020</date>
+    <generator>
+      <product>Nipper Studio</product>
+      <manufacturer>Titania</manufacturer>
+      <website>www.titania.com</website>
+      <version>2.8.0</version>
+    </generator>
+    <devices>
+      <device name="PA-200" type="Palo Alto Firewall" os="PANOS" osversion="7.0.0" />
+    </devices>
+  </information>
+  <report>
+    <part index="2" title="Security Audit" ref="SECURITYAUDIT">
+    <section index="2.2" title="Long Session Timeout" ref="ADMINISTRATION.LONG.SESSION.TIMEOUT">
+      <issuedetails>
+        <devices>
+          <device name="PA-200" type="Palo Alto Firewall" osversion="7.0.0" />
+        </devices>
+        <ratings type="CVSSv2">
+          <rating>Medium</rating>
+          <cvssv2-base score="7.6">AV:N/AC:H/Au:N/C:C/I:C/A:C</cvssv2-base>
+          <cvssv2-temporal score="6.3">E:F/RL:OF/RC:C</cvssv2-temporal>
+          <cvssv2-environmental score="6.3">CDP:ND/TD:ND/CR:ND/IR:ND/AR:ND</cvssv2-environmental>
+    <FindingID>NSA-ADMIN-028</FindingID>
+        </ratings>
+      </issuedetails>
+      <section index="2.2.1" title="Affected Device" ref="SECTION.2.2.1">
+        <list type="bullet">
+          <listitem>PA-200 - Palo Alto Firewall.</listitem>
+        </list>
+      </section>
+      <section index="2.2.2" title="Finding" ref="FINDING">
+        <text>The session timeout setting is used to determine if a administrative or user session is no longer being used, enabling a device to determine when a session can be automatically disconnected. A session could become unused if an administrator has not properly terminated and remains authenticated or if they leave their computer unattended without terminating their session.</text>
+        <text>Compass IT Compliance determined that the session timeout was set to 60 minutes on PA-200.</text>
+      </section>
+      <section index="2.2.3" title="Impact" ref="IMPACT">
+        <text>An attacker could be able to access a system using an authenticated session that is no longer being used. The attacker would then be able to perform information gathering, configuration and other malicious activities under the context of the previous authenticated user. Due to the nature of the access, this could be an administrative level of access.</text>
+      </section>
+      <section index="2.2.4" title="Ease" ref="EASE">
+        <text>To exploit this issue an attacker would have to identify a session that had not been correctly terminated before it expires and then take over that session. This could be as simple as plugging a console cable in to a port on the device or taking over a computer system whilst the operator has left their system open, both of which would require physical access. However, an attacker may also be able to perform this attack remotely if an insecure network protocol has been used to create the session.</text>
+      </section>
+      <section index="2.2.5" title="Recommendation" ref="RECOMMENDATION">
+        <text>Compass IT Compliance recommends that a timeout period of 10 minutes should be configured for all sessions.</text>
+      </section>
+    </section>
+    <section index="2.3" title="No BGP Route Flap Prevention" ref="ROUTING.BGP.FLAP">
+      <issuedetails>
+        <devices>
+          <device name="PA-200" type="Palo Alto Firewall" osversion="7.0.0" />
+        </devices>
+        <ratings type="CVSSv2">
+          <rating>Medium</rating>
+          <cvssv2-base score="6.4">AV:N/AC:L/Au:N/C:P/I:N/A:P</cvssv2-base>
+          <cvssv2-temporal score="5.6">E:H/RL:OF/RC:C</cvssv2-temporal>
+          <cvssv2-environmental score="5.6">CDP:ND/TD:ND/CR:ND/IR:ND/AR:ND</cvssv2-environmental>
+    <FindingID>NSA-ROUT-005</FindingID>
+        </ratings>
+      </issuedetails>
+      <section index="2.3.1" title="Affected Device" ref="SECTION.2.3.1">
+        <list type="bullet">
+          <listitem>PA-200 - Palo Alto Firewall.</listitem>
+        </list>
+      </section>
+      <section index="2.3.2" title="Finding" ref="FINDING">
+        <text>BGP is a routing protocol that allows network devices to dynamically adapt to changes to the network topology. BGP routers update their neighbors with changes such as network link status changes. BGP route flapping is a condition where routing tables are constantly being updated due to a link transitioning between up and down status. These transitions cause routing tables to be continuously updated across the infrastructure. Routing devices can be configured with BGP route dampening in order to help mitigate against constant route flapping.</text>
+        <text>Compass IT Compliance determined that BGP route dampening had not been configured on PA-200.</text>
+      </section>
+      <section index="2.3.3" title="Impact" ref="IMPACT">
+        <text>Excessive route updates, caused by a link status constantly changing between up to down, can impact network routing performance. Network routing could slow with network packets being dropped, possibly causing a Denial of Service condition.</text>
+      </section>
+      <section index="2.3.4" title="Ease" ref="EASE">
+        <text>It is possible for an attacker to send BGP packets to a router to update the routing table and cause a route flapping condition. However, the attacker may need additional information in order to perform the attack, such as a BGP password.</text>
+      </section>
+      <section index="2.3.5" title="Recommendation" ref="RECOMMENDATION">
+        <text>Compass IT Compliance recommends that BGP route dampening should be configured to help prevent excessive routing updates from causing a DoS condition.</text>
+      </section>
+    </section>
+  </part>
+  </report>
+</document>

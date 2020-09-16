@@ -1,5 +1,5 @@
 class NipperTasks < Thor
-	include Rails.application.config.dradis.thor_helper_module
+  include Rails.application.config.dradis.thor_helper_module
 
   namespace 'dradis:plugins:nipper'
 

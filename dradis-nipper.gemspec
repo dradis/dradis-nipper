@@ -17,9 +17,12 @@ Gem::Specification.new do |spec|
   spec.license     = 'GPL-2'
 
   spec.files = `git ls-files`.split($\)
+  spec.test_files  = spec.files.grep(%r{^(test|spec|features)/})
 
   spec.add_dependency 'dradis-plugins', '~> 3.8'
-  spec.add_dependency 'rake', '~> 13.0'
 
-  spec.add_development_dependency 'bundler', '~> 1.6'
+  spec.add_development_dependency 'bundler', '~> 2.1'
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'combustion', '~> 0.5.2'
 end
