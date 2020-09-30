@@ -1,5 +1,9 @@
+Gemfile.lock
 .bundle/
 log/*.log
 pkg/
+
+# Combustion engine
+/spec/internal/log/*.log
 
 .DS_Store
