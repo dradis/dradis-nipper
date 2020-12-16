@@ -72,6 +72,12 @@ module Dradis::Plugins::Nipper
         label: host_xml.attr('name'),
         type: :host
       )
+
+      # Set device properties
+      @host_node.set_property(:device_name, host_xml.attr('name'))
+      @host_node.set_property(:device_type, host_xml.attr('type'))
+      @host_node.set_property(:os_version, host_xml.attr('osversion'))
+      @host_node.save
     end
   end
 end
