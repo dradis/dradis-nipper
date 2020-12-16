@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'Nipper upload plugin' do
   describe 'importer' do
@@ -23,14 +23,14 @@ describe 'Nipper upload plugin' do
         OpenStruct.new(args)
       end.once
 
-      @importer.import(file: 'spec/fixtures/files/invalid.xml')
+      @importer.import(file: File.expand_path('../spec/fixtures/files/invalid.xml', __dir__))
     end
 
     it 'creates nodes, issues, and evidences as needed' do
       expect(@content_service).to receive(:create_node) do |args|
         expect(args[:label]).to eq('PA-200')
         expect(args[:type]).to eq(:host)
-        OpenStruct.new(args)
+        @node = Node.create(label: args[:label])
       end.once
       expect(@content_service).to receive(:create_issue) do |args|
         OpenStruct.new(args)
@@ -40,7 +40,15 @@ describe 'Nipper upload plugin' do
       end.exactly(2).times
 
       # Run the import
-      @importer.import(file: 'spec/fixtures/files/sample.xml')
+      @importer.import(file: File.expand_path('../spec/fixtures/files/sample.xml', __dir__))
+
+      expect(@node.properties).to eq(
+        {
+          'device_name'=>'PA-200',
+          'device_type'=>'Palo Alto Firewall',
+          'os_version'=>'7.0.0'
+        }
+      )
     end
   end
 end

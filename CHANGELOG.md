@@ -1,3 +1,3 @@
-## Dradis Framework 3.XX (XXX, 2020) ##
+## Dradis Framework 3.20 (XXX, 2020) ##
 
 *  Initial version.
