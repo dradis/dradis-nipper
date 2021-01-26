@@ -41,7 +41,7 @@ module Nipper
       elsif method.to_s.starts_with?('cvss')
         process_cvss_field(method)
       else
-        @xml.xpath("./#{translations_table[method]}").first.try(:text)
+        collect_text(@xml.xpath("./#{translations_table[method]}"))
       end
     end
 
@@ -55,10 +55,16 @@ module Nipper
       base_method = method.to_s.sub('_vector', '').to_sym
 
       if method.to_s.ends_with?('vector')
-        @xml.xpath("./#{translations_table[base_method]}").first.try(:text)
+        collect_text(@xml.xpath("./#{translations_table[base_method]}"))
       else
         @xml.xpath("./#{translations_table[base_method]}").attr('score')
       end
+    end
+
+    private
+
+    def collect_text(xml_field)
+      xml_field.children.map { |xml_text| xml_text.text }.join("\n")
     end
   end
 end
