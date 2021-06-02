@@ -1,6 +1,10 @@
-## Dradis Framework 3.22 (XXX, 2021) ##
+## Dradis Framework 4.00 (XXX, 2021) ##
 
 *  Include multiple paragraphs when importing fields.
+
+## Dradis Framework 3.22 (April, 2021) ##
+
+*  No changes.
 
 ## Dradis Framework 3.21 (February, 2021) ##
 
