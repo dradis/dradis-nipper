@@ -34,6 +34,7 @@ describe 'Nipper upload plugin' do
       end.once
       expect(@content_service).to receive(:create_issue) do |args|
         OpenStruct.new(args)
+        @issue = Issue.create(text: args[:text])
       end.exactly(2).times
       expect(@content_service).to receive(:create_evidence) do |args|
         OpenStruct.new(args)
@@ -49,6 +50,8 @@ describe 'Nipper upload plugin' do
           'os_version'=>'7.0.0'
         }
       )
+
+      expect(@issue.fields['Finding'].lines.count).to eq(2)
     end
   end
 end
