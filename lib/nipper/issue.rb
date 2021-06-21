@@ -65,8 +65,8 @@ module Nipper
 
     def process_nipperv1_field(method)
       translations_table = {
-        nipperv1_impact: 'issuedetails/ratings/impact',
-        nipperv1_rating: 'issuedetails/ratings/rating'
+        nipperv1_impact: 'issuedetails/ratings[@type="Nipperv1"]/impact',
+        nipperv1_rating: 'issuedetails/ratings[@type="Nipperv1"]/rating'
       }
 
       @xml.xpath("./#{translations_table[method]}").text

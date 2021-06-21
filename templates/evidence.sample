@@ -4,4 +4,26 @@
       <device name="SampleDevice" type="Sample Device Type" osversion="1.2.3" />
     </devices>
   </issuedetails>
+  <section index="1" title="Finding" ref="FINDING">
+    <text>Test Finding Text</text>
+    <table index="12" title="Test Finding Table Title">
+      <headings>
+        <heading>Header 1</heading>
+        <heading>Header 2</heading>
+        <heading>Header 3</heading>
+      </headings>
+      <tablebody>
+        <tablerow>
+          <tablecell><item>Row 1A</item></tablecell>
+          <tablecell><item>Row 1B</item></tablecell>
+          <tablecell><item>Row 1C</item></tablecell>
+        </tablerow>
+        <tablerow>
+          <tablecell><item>Row 2A</item></tablecell>
+          <tablecell><item>Row 2B</item></tablecell>
+          <tablecell><item>Row 2C</item></tablecell>
+        </tablerow>
+      </tablebody>
+    </table>
+  </section>
 </section>
