@@ -9,8 +9,8 @@ module Nipper
         :cvss_base, :cvss_base_vector,
         :cvss_environmental, :cvss_environmental_vector,
         :cvss_temporal, :cvss_temporal_vector,
-        :ease, :finding, :impact, :recommendation,
-        :title
+        :ease, :finding, :impact, :nipperv1_impact,:nipperv1_rating,
+        :recommendation, :title
       ]
     end
 
@@ -40,6 +40,8 @@ module Nipper
         @xml.attr('title')
       elsif method.to_s.starts_with?('cvss')
         process_cvss_field(method)
+      elsif method.to_s.starts_with?('nipperv1')
+        process_nipperv1_field(method)
       else
         collect_text(@xml.xpath("./#{translations_table[method]}"))
       end
@@ -59,6 +61,15 @@ module Nipper
       else
         @xml.xpath("./#{translations_table[base_method]}").attr('score')
       end
+    end
+
+    def process_nipperv1_field(method)
+      translations_table = {
+        nipperv1_impact: 'issuedetails/ratings/impact',
+        nipperv1_rating: 'issuedetails/ratings/rating'
+      }
+
+      @xml.xpath("./#{translations_table[method]}").text
     end
 
     private

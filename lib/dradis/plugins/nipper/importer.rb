@@ -55,7 +55,6 @@ module Dradis::Plugins::Nipper
       plugin_id = xml_issue.attr('ref')
 
       logger.info { "Creating issue: #{plugin_id}" }
-
       issue_text = template_service.process_template(template: 'issue', data: xml_issue)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 

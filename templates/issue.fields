@@ -8,4 +8,6 @@ issue.cvss_environmental_vector
 issue.finding
 issue.impact
 issue.ease
+issue.nipperv1_impact
+issue.nipperv1_rating
 issue.recommendation
