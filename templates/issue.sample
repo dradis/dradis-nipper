@@ -10,6 +10,12 @@
       <cvssv2-environmental score="5.6">CDP:ND/TD:ND/CR:ND/IR:ND/AR:ND</cvssv2-environmental>
       <FindingID>TEST-ISSUE</FindingID>
     </ratings>
+    <ratings type="Nipperv1">
+      <rating>Test Nipperv1 Rating</rating>
+      <impact>Test Nipperv1 Impact</impact>
+      <ease>Test Nipperv1 Ease</ease>
+      <fix>Test Nipperv1 Fix</fix>
+    </ratings>
   </issuedetails>
   <section index="2.3.1" title="Finding" ref="FINDING">
     <text>Test Finding</text>

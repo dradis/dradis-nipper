@@ -6,3 +6,6 @@
 
 #[OS]#
 %evidence.device_osversion%
+
+#[Findings]#
+%evidence.findings_table%

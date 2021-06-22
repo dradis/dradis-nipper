@@ -19,5 +19,11 @@
 #[Ease]#
 %issue.ease%
 
+#[Nipperv1.Impact]#
+%issue.nipperv1_impact%
+
+#[Nipperv1.Rating]#
+%issue.nipperv1_rating%
+
 #[Recommendation]#
 %issue.recommendation%
