@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.files       = `git ls-files`.split($\)
   spec.test_files  = spec.files.grep(%r{^(test|spec|features)/})
 
-  spec.add_dependency 'dradis-plugins', '~> 3.8'
+  spec.add_dependency 'dradis-plugins', '~> 4.0.0'
 
   spec.add_development_dependency 'bundler', '~> 2.1'
   spec.add_development_dependency 'rake', '~> 13.0'
