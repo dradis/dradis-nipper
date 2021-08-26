@@ -44,10 +44,6 @@ module Dradis::Plugins::Nipper
 
     private
 
-    def findings_table_xml(xml_issue)
-      xml_issue.at_xpath('./section[@title="Finding"]/table').dup
-    end
-
     def process_evidence(xml_evidence, issue)
       logger.info { 'Creating evidence...' }
 
