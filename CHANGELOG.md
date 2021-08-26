@@ -1,4 +1,4 @@
-## Dradis Framework 4.00 (XXX, 2021) ##
+## Dradis Framework 4.0.0 (July, 2021) ##
 
 *  Add Nipperv1 rating, impact to issues and findings table to evidence.
 *  Include multiple paragraphs when importing fields.
