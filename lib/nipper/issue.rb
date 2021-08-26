@@ -9,7 +9,7 @@ module Nipper
         :cvss_base, :cvss_base_vector,
         :cvss_environmental, :cvss_environmental_vector,
         :cvss_temporal, :cvss_temporal_vector,
-        :ease, :finding, :impact, :nipperv1_impact,:nipperv1_rating,
+        :ease, :finding, :impact, :nipperv1_impact, :nipperv1_rating,
         :recommendation, :title
       ]
     end
