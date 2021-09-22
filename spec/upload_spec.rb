@@ -67,14 +67,12 @@ describe 'Nipper upload plugin' do
         end.exactly(1).times
         expect(@content_service).to receive(:create_evidence) do |args|
           OpenStruct.new(args)
-          @evidence =  Evidence.create(content: args[:content])
         end.exactly(1).times
 
         @importer.import(file: File.expand_path('../spec/fixtures/files/v2.5_sample.xml', __dir__))
 
         expect(@issue.fields['Nipperv1.Impact']).to eq('Critical')
         expect(@issue.fields['Nipperv1.Rating']).to eq('High')
-        expect(@evidence.fields['Findings'].lines.count).to eq(3)
       end
     end
   end
