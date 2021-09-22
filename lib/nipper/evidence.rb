@@ -20,6 +20,7 @@ module Nipper
       end
 
       field = method.to_s.split('_')[1]
+
       @xml.at_xpath('./device').attr(field)
     end
   end
