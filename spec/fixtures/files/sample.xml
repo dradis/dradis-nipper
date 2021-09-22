@@ -70,6 +70,37 @@
       <section index="2.3.2" title="Finding" ref="FINDING">
         <text>BGP is a routing protocol that allows network devices to dynamically adapt to changes to the network topology. BGP routers update their neighbors with changes such as network link status changes. BGP route flapping is a condition where routing tables are constantly being updated due to a link transitioning between up and down status. These transitions cause routing tables to be continuously updated across the infrastructure. Routing devices can be configured with BGP route dampening in order to help mitigate against constant route flapping.</text>
         <text>Compass IT Compliance determined that BGP route dampening had not been configured on PA-200.</text>
+        <table index="12" title="Test Finding Table Title">
+          <headings>
+            <heading>Header 1</heading>
+            <heading>Header 2</heading>
+            <heading>Header 3</heading>
+          </headings>
+          <tablebody>
+            <tablerow>
+              <tablecell>
+                <item>Row 1A</item>
+              </tablecell>
+              <tablecell>
+                <item>Row 1B</item>
+              </tablecell>
+              <tablecell>
+                <item>Row 1C</item>
+              </tablecell>
+            </tablerow>
+            <tablerow>
+              <tablecell>
+                <item>Row 2A</item>
+              </tablecell>
+              <tablecell>
+                <item>Row 2B</item>
+              </tablecell>
+              <tablecell>
+                <item>Row 2C</item>
+              </tablecell>
+            </tablerow>
+          </tablebody>
+        </table>
       </section>
       <section index="2.3.3" title="Impact" ref="IMPACT">
         <text>Excessive route updates, caused by a link status constantly changing between up to down, can impact network routing performance. Network routing could slow with network packets being dropped, possibly causing a Denial of Service condition.</text>

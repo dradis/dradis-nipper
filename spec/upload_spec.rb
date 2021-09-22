@@ -38,6 +38,7 @@ describe 'Nipper upload plugin' do
       end.exactly(2).times
       expect(@content_service).to receive(:create_evidence) do |args|
         OpenStruct.new(args)
+        @evidence =  Evidence.create(content: args[:content])
       end.exactly(2).times
 
       # Run the import
@@ -52,6 +53,7 @@ describe 'Nipper upload plugin' do
       )
 
       expect(@issue.fields['Finding'].lines.count).to eq(2)
+      expect(@evidence.fields['Findings'].lines.count).to eq(3)
     end
   end
 end

@@ -1,5 +1,5 @@
-[v#.#.#] ([month] [YYYY])
-  - [future tense verb] [feature]
+v4.1.0 ([month] [YYYY])
+  - Add findings table to evidence
   - Upgraded gems:
     - [gem]
   - Bugs fixes:
