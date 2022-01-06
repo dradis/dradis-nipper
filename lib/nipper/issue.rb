@@ -9,7 +9,8 @@ module Nipper
         :cvss_base, :cvss_base_vector,
         :cvss_environmental, :cvss_environmental_vector,
         :cvss_temporal, :cvss_temporal_vector,
-        :ease, :finding, :impact, :nipperv1_impact, :nipperv1_rating,
+        :ease, :finding, :impact, :nipperv1_ease, :nipperv1_fix,
+        :nipperv1_impact, :nipperv1_rating,
         :recommendation, :title
       ]
     end
@@ -65,6 +66,8 @@ module Nipper
 
     def process_nipperv1_field(method)
       translations_table = {
+        nipperv1_ease: 'issuedetails/ratings[@type="Nipperv1"]/ease',
+        nipperv1_fix: 'issuedetails/ratings[@type="Nipperv1"]/fix',
         nipperv1_impact: 'issuedetails/ratings[@type="Nipperv1"]/impact',
         nipperv1_rating: 'issuedetails/ratings[@type="Nipperv1"]/rating'
       }

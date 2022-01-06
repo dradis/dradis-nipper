@@ -1,5 +1,5 @@
 [v#.#.#] ([month] [YYYY])
-  - Add Nipperv1 rating and impact to issues
+  - Add Nipperv1 fields to issues
   - Upgraded gems:
     - [gem]
   - Bugs fixes:
