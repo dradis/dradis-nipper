@@ -53,29 +53,5 @@ describe 'Nipper upload plugin' do
 
       expect(@issue.fields['Finding'].lines.count).to eq(2)
     end
-
-    context 'nipper v2.5 output' do
-      it 'imports Nipperv1 fields and findings table' do
-        expect(@content_service).to receive(:create_node) do |args|
-          expect(args[:label]).to eq('PA-200')
-          expect(args[:type]).to eq(:host)
-          @node = Node.create(label: args[:label])
-        end.once
-        expect(@content_service).to receive(:create_issue) do |args|
-          OpenStruct.new(args)
-          @issue = Issue.create(text: args[:text])
-        end.exactly(1).times
-        expect(@content_service).to receive(:create_evidence) do |args|
-          OpenStruct.new(args)
-        end.exactly(1).times
-
-        @importer.import(file: File.expand_path('../spec/fixtures/files/sample.v2.5.xml', __dir__))
-
-        expect(@issue.fields['Nipperv1.Ease']).to eq('Moderate')
-        expect(@issue.fields['Nipperv1.Fix']).to eq('Quick')
-        expect(@issue.fields['Nipperv1.Impact']).to eq('Critical')
-        expect(@issue.fields['Nipperv1.Rating']).to eq('High')
-      end
-    end
   end
 end
