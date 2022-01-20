@@ -50,9 +50,9 @@ module Nipper
 
     def process_cvss_field(method)
       translations_table = {
-        cvss_base: 'issuedetails/ratings/cvssv2-base',
-        cvss_temporal: 'issuedetails/ratings/cvssv2-temporal',
-        cvss_environmental: 'issuedetails/ratings/cvssv2-environmental',
+        cvss_base: 'issuedetails/ratings[@type="CVSSv2"]/cvssv2-base',
+        cvss_temporal: 'issuedetails/ratings[@type="CVSSv2"]/cvssv2-temporal',
+        cvss_environmental: 'issuedetails/ratings[@type="CVSSv2"]/cvssv2-environmental'
       }
 
       base_method = method.to_s.sub('_vector', '').to_sym
