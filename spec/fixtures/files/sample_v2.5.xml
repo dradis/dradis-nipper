@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document nipperstudio="2.5.5.5804" xmlrevision="3" xmlversion="2">
+  <information>
+    <title>Firewall Review Report</title>
+    <author>Compass IT Compliance</author>
+    <authorlogo>C:/Nipper Photos/CompassITC-logo-HiRes-TSP.png</authorlogo>
+    <date>Friday, September 11, 2020</date>
+    <generator>
+      <product>Nipper Studio</product>
+      <manufacturer>Titania</manufacturer>
+      <website>www.titania.com</website>
+      <version>2.8.0</version>
+    </generator>
+    <devices>
+      <device name="PA-200" os="PANOS" osversion="7.0.0" type="Palo Alto Firewall"/>
+    </devices>
+  </information>
+  <report>
+    <part index="2" title="Security Audit" ref="SECURITYAUDIT">
+      <section index="1.1" ref="INTRODUCTION" title="Introduction">
+        <issuedetails>
+          <devices>
+            <device name="PA-200" osversion="7.0.0" type="Palo Alto Firewall"/>
+          </devices>
+          <ratings type="Nipperv1">
+            <rating>High</rating>
+            <impact>Critical</impact>
+            <ease>Moderate</ease>
+            <fix>Quick</fix>
+          </ratings>
+        </issuedetails>
+        <section index="2.2.1" ref="FINDING" title="Finding">
+          <table index="10" ref="AUTHENTICATION.USERS.WEAKPASSWORD.1" title="Table Title">
+            <headings>
+              <heading>Heading 1</heading>
+              <heading>Heading 2</heading>
+              <heading>Heading 3</heading>
+            </headings>
+            <tablebody>
+              <tablerow>
+                <tablecell>
+                  <item>Row 1A</item>
+                </tablecell>
+                <tablecell>
+                  <item>Row 1B</item>
+                </tablecell>
+                <tablecell>
+                  <item>Row 1C</item>
+                </tablecell>
+              </tablerow>
+              <tablerow>
+                <tablecell>
+                  <item>Row 2A</item>
+                </tablecell>
+                <tablecell>
+                  <item>Row 2B</item>
+                </tablecell>
+                <tablecell>
+                  <item>Row 2C</item>
+                </tablecell>
+              </tablerow>
+            </tablebody>
+          </table>
+        </section>
+      </section>
+    </part>
+  </report>
+</document>

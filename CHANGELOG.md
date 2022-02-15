@@ -1,5 +1,6 @@
-v4.1.0 ([month] [YYYY])
+[v#.#.#] ([month] [YYYY])
   - Add findings table to evidence
+  - Add Nipperv1 fields to issues
   - Upgraded gems:
     - [gem]
   - Bugs fixes:
@@ -10,6 +11,9 @@ v4.1.0 ([month] [YYYY])
     - High: (Authenticated|Unauthenticated) (admin|author|contributor) [vulnerability description]
     - Medium: (Authenticated|Unauthenticated) (admin|author|contributor) [vulnerability description]
     - Low: (Authenticated|Unauthenticated) (admin|author|contributor) [vulnerability description]
+
+v4.1.0 (November 2021)
+  - No changes
 
 v4.0.0 (July 2021)
   - Include multiple paragraphs when importing fields
