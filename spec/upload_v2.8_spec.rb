@@ -42,7 +42,7 @@ describe 'Nipper upload plugin' do
       end.exactly(2).times
 
       # Run the import
-      @importer.import(file: File.expand_path('../spec/fixtures/files/sample.xml', __dir__))
+      @importer.import(file: File.expand_path('../spec/fixtures/files/sample_v2.8.xml', __dir__))
 
       expect(@node.properties).to eq(
         {

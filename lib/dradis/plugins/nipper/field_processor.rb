@@ -7,12 +7,7 @@ module Dradis
         def post_initialize(args = {})
           raise 'Unhandled data name!' unless ALLOWED_DATA_NAMES.include?(data.name)
 
-          @nipper_object =
-            if data.name == 'section'
-              ::Nipper::Issue.new(data)
-            elsif data.name == 'devices'
-              ::Nipper::Evidence.new(data)
-            end
+          @nipper_object = ::Nipper::Issue.new(data)
         end
 
         def value(args = {})

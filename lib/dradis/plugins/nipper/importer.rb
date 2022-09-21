@@ -44,10 +44,9 @@ module Dradis::Plugins::Nipper
 
     private
 
-    def process_evidence(xml_evidence, issue)
+    def process_evidence(issue:, xml_issue:)
       logger.info { 'Creating evidence...' }
-
-      evidence_text = template_service.process_template(template: 'evidence', data: xml_evidence)
+      evidence_text = template_service.process_template(template: 'evidence', data: xml_issue)
       content_service.create_evidence(issue: issue, node: @host_node, content: evidence_text)
     end
 
@@ -59,7 +58,7 @@ module Dradis::Plugins::Nipper
       issue_text = template_service.process_template(template: 'issue', data: xml_issue)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
-      process_evidence(xml_evidence_with_findings(xml_issue), issue)
+      process_evidence(issue: issue, xml_issue: xml_issue)
     end
 
     def process_node(xml_root)
@@ -77,17 +76,6 @@ module Dradis::Plugins::Nipper
       @host_node.set_property(:device_type, host_xml.attr('type'))
       @host_node.set_property(:os_version, host_xml.attr('osversion'))
       @host_node.save
-    end
-
-    def xml_evidence_with_findings(xml_issue)
-      xml_evidence = xml_issue.at_xpath('./issuedetails/devices')
-
-      # The findings table is actually located outside of the ./issuedetails/devices node, so we
-      # have to manually append it to the xml output.
-      findings_table_xml = xml_issue.at_xpath('./section[@title="Finding"]/table').dup
-      xml_evidence << findings_table_xml if findings_table_xml
-
-      xml_evidence
     end
   end
 end
