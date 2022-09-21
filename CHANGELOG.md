@@ -1,16 +1,17 @@
 [v#.#.#] ([month] [YYYY])
   - Add findings table to evidence
+
+v4.5.0 (August 2022)
+  - No changes
+
+v4.4.0 (June 2022)
+  - No changes
+
+v4.3.0 (April 2022)
+  - No changes
+
+v4.2.0 (February 2022)
   - Add Nipperv1 fields to issues
-  - Upgraded gems:
-    - [gem]
-  - Bugs fixes:
-    - [future tense verb] [bug fix]
-    - Bug tracker items:
-      - [item]
-  - Security Fixes:
-    - High: (Authenticated|Unauthenticated) (admin|author|contributor) [vulnerability description]
-    - Medium: (Authenticated|Unauthenticated) (admin|author|contributor) [vulnerability description]
-    - Low: (Authenticated|Unauthenticated) (admin|author|contributor) [vulnerability description]
 
 v4.1.0 (November 2021)
   - No changes
