@@ -41,7 +41,7 @@ module Nipper
         finding: 'section[@ref="FINDING"]/text',
         impact: 'section[@ref="IMPACT"]/text',
         ease: 'section[@ref="EASE"]/text',
-        recommendation: 'section[@ref="RECOMMENDATION"]/text',
+        recommendation: 'section[@ref="RECOMMENDATION"]/text'
       }
 
       if method == :title
