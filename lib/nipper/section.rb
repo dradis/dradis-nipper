@@ -1,22 +1,19 @@
 module Nipper
-  class Issue
+  class Section
     def initialize(xml_node)
       @xml = xml_node
-    end
-
-    def evidence_tags
-      [:device_name, :device_osversion, :device_type, :findings_table]
     end
 
     def supported_tags
       [
         :cvss_base, :cvss_base_vector,
         :cvss_environmental, :cvss_environmental_vector,
-        :cvss_temporal, :cvss_temporal_vector,
-        :ease, :finding, :impact, :nipperv1_ease, :nipperv1_fix,
+        :device_name, :device_osversion, :device_type,
+        :cvss_temporal, :cvss_temporal_vector, :ease,
+        :finding, :findings_table, :impact, :nipperv1_ease, :nipperv1_fix,
         :nipperv1_impact, :nipperv1_rating,
         :recommendation, :title
-      ] + evidence_tags
+      ]
     end
 
     def respond_to?(method, include_private = false)

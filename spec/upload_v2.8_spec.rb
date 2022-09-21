@@ -54,6 +54,9 @@ describe 'Nipper upload plugin' do
 
       expect(@issue.fields['Finding'].lines.count).to eq(2)
       expect(@evidence.fields['Findings'].lines.count).to eq(3)
+      expect(@evidence.fields['Findings']).to match(/Header 1/)
+      expect(@evidence.fields['Findings']).to match(/Row 1B/)
+      expect(@evidence.fields['Findings']).to match(/Row 2C/)
     end
   end
 end
