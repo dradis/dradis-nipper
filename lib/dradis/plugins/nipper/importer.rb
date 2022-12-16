@@ -2,6 +2,7 @@ module Dradis::Plugins::Nipper
   class Importer < Dradis::Plugins::Upload::Importer
     SECURITY_SECTIONS = %w{
       SECURITY.INTRODUCTION
+      SECURITY.FINDINGS.SUMMARY
       SECURITY.CONCLUSIONS
       SECURITY.RECOMMENDATIONS
       SECURITY.MITIGATIONS
