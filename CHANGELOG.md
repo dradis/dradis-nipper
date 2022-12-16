@@ -1,5 +1,11 @@
-v4.4.0 (XXX 2022)
+v4.7.0 (XXX 2023)
   - Ignore the findings summary section during import
+
+v4.6.0 (November 2022)
+  - No changes
+
+v4.5.0 (August 2022)
+  - No changes
 
 v4.4.0 (June 2022)
   - No changes
