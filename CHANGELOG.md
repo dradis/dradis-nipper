@@ -1,4 +1,4 @@
-v4.7.0 (XXX 2023)
+v4.7.0 (February 2023)
   - Ignore the findings summary section during import
 
 v4.6.0 (November 2022)
