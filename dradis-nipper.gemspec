@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.license     = 'Commercial - Dradis Pro'
 
   spec.authors     = ['Dradis Team']
-  spec.email       = ['<email@securityroots.com>']
+  spec.homepage    = 'https://dradis.com/integrations/nipper.html'
 
   spec.files       = `git ls-files`.split($\)
   spec.test_files  = spec.files.grep(%r{^(test|spec|features)/})
