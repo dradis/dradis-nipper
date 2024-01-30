@@ -2,8 +2,7 @@
 
 This add-on will enable the user to upload Nipper output files in the XML format (.xml) to create a structure of Dradis nodes, issues, and evidences that contain the same information about the hosts and vulnerabilities in the original file.
 
-The add-on requires Dradis 3.0 or higher.
-
+The add-on requires [Dradis CE](https://dradis.com/ce/) > 3.0, or [Dradis Pro](https://dradis.com/).
 
 ## More information
 
