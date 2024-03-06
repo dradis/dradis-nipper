@@ -48,7 +48,7 @@ module Dradis::Plugins::Nipper
     def process_evidence(xml_evidence, issue)
       logger.info { 'Creating evidence...' }
 
-      evidence_text = template_service.process_template(template: 'evidence', data: xml_evidence)
+      evidence_text = mapping_service.apply_mapping(source: 'evidence', data: xml_evidence)
       content_service.create_evidence(issue: issue, node: @host_node, content: evidence_text)
     end
 
@@ -57,7 +57,7 @@ module Dradis::Plugins::Nipper
 
       logger.info { "Creating issue: #{plugin_id}" }
 
-      issue_text = template_service.process_template(template: 'issue', data: xml_issue)
+      issue_text = mapping_service.apply_mapping(source: 'issue', data: xml_issue)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
       xml_evidence = xml_issue.at_xpath('./issuedetails/devices')
