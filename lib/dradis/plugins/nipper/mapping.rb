@@ -21,5 +21,30 @@ module Dradis::Plugins::Nipper
         'Recommendation' => '{{ nipper[issue.recommendation] }}'
       }
     }.freeze
+
+    SOURCE_FIELDS = {
+      evidence: [
+        'evidence.device_name',
+        'evidence.device_type',
+        'evidence.device_osversion'
+      ],
+      issue: [
+        'issue.title',
+        'issue.cvss_base',
+        'issue.cvss_base_vector',
+        'issue.cvss_temporal',
+        'issue.cvss_temporal_vector',
+        'issue.cvss_environmental',
+        'issue.cvss_environmental_vector',
+        'issue.finding',
+        'issue.impact',
+        'issue.ease',
+        'issue.nipperv1_ease',
+        'issue.nipperv1_fix',
+        'issue.nipperv1_impact',
+        'issue.nipperv1_rating',
+        'issue.recommendation'
+      ]
+    }.freeze
   end
 end
